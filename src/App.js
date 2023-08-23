@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 import Contacts from "./Contacts";
 import Home from "./Home";
 import AddContact from "./AddContact";
-
+import "./index.css"
 
 function App() {
   const [contacts, setContacts] = useState([])
@@ -14,12 +14,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/home" element={<Home />} />
-      </Routes>
-      <Routes>
-        <Route path="/contacts" element={<Contacts />} />
-      </Routes>
-      <Routes>
-        <Route path="/addContact" element={<AddContact />} />
+        <Route path="/contacts" element={<Contacts contacts={contacts} setContacts={setContacts} />} />
+        <Route path="/addContact" element={<AddContact contacts={contacts} setContacts={setContacts} />} />
       </Routes>
     </div>
   );

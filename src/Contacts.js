@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Contact from "./Contact";
 
-function Contacts() {
-    let [contactList, setContactList] = useState()
+function Contacts({ contacts, setContacts}) {
+    let [contactList, setContactList] = useState([])
     
-    setContactList = (
         fetch('http://localhost:3000/contacts')
         .then(response => response.json())
-        .then(contact => <Contact contact={contact} />)
-    )
+        .then(contacts => setContacts= (contacts.map(contact => <Contact contact={contact} />)))
+        //.then(console.log(contactList))
 
     return (
         <>
-        {contactList}
+        {contacts}
         </>
     )
 }
