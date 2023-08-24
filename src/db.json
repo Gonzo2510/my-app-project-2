@@ -1,0 +1,16 @@
+{
+    "contacts": [
+      {
+        "id": 1,
+        "name": "Woody",
+        "address": "1234 your street",
+        "phoneNumber": 1234567890
+      },
+      {
+        "id": 2,
+        "name": "Buzz Lightyear",
+        "address": "0987 larkin rd",
+        "phoneNumber": 9987654321
+      }
+    ]
+  }
