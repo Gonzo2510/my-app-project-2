@@ -1,19 +1,18 @@
 {
-  "posts": [
+  "contacts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Woody",
+      "title": "teacher",
+      "address": "0987 a road",
+      "phoneNumber": "1234567890"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "Buzz Lightyear",
+      "title": "accountant",
+      "address": "1234 your street",
+      "phoneNumber": "087654321"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

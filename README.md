@@ -1,5 +1,6 @@
 to start db watch   json-server --watch db.json
 
+npm start
 
 
 # Getting Started with Create React App
