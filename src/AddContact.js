@@ -1,6 +1,16 @@
 import React from "react";
+import Contact from "./Contact";
 
-function AddContact() {
+function deleteContact(contactToDelete){
+    const contactId = contactToDelete.id
+    console.log(contactId)
+
+    // fetch('http://localhost:3000/contacts', {method: 'DELETE'})
+    // .then(response => response.json())
+    // .then(newContact => setContacts(oldContacts => [...oldContacts, <Contact key={newContact.id} contact={newContact} />]))
+}
+
+function AddContact({ contacts, setContacts }) {
     function handleSubmit(e) {
         e.preventDefault()
         const name = e.target[0].value
@@ -10,15 +20,19 @@ function AddContact() {
         
         fetch('http://localhost:3000/contacts', {
             method: 'POST',
+            headers: {
+                "Accept" : 'application/json',
+                "Content-Type" : 'application/json'
+            },
             body: JSON.stringify({
                 name : name,
                 title : title,
                 address : address,
-                phoneNumber : phoneNumber 
+                phoneNumber : phoneNumber,
                 })
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(newContact => setContacts(oldContacts => [...oldContacts, <Contact key={newContact.id} contact={newContact} handleDelete={deleteContact()} />]))
     }
 
     return (

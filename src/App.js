@@ -12,7 +12,7 @@ function App() {
   let [contacts, setContacts] = useState([])
   // useEffect(()=> (
 
-  // ),[])
+  // ),[AddContact])
 
   return (
     <div>
