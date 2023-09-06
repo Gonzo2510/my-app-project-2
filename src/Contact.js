@@ -13,7 +13,7 @@ function Contact({ contact, handleDelete }) {
         <br />
         Phone: {phoneNumber}
         <br/>
-        <button className="delete" onClick={handleClick}>Delete</button>
+        {/* <button className="delete" onClick={handleClick}>Delete</button> */}
       </div>
   )
 }
