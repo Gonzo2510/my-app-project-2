@@ -1,14 +1,14 @@
 import React from "react";
 import Contact from "./Contact";
 
-function deleteContact(contactToDelete){
-    const contactId = contactToDelete.id
-    console.log(contactId)
+// function deleteContact(contactToDelete){
+//     const contactId = contactToDelete.id
+//     console.log(contactId)
 
-    // fetch('http://localhost:3000/contacts', {method: 'DELETE'})
-    // .then(response => response.json())
-    // .then(newContact => setContacts(oldContacts => [...oldContacts, <Contact key={newContact.id} contact={newContact} />]))
-}
+//     // fetch('http://localhost:3000/contacts', {method: 'DELETE'})
+//     // .then(response => response.json())
+//     // .then(newContact => setContacts(oldContacts => [...oldContacts, <Contact key={newContact.id} contact={newContact} />]))
+// }
 
 function AddContact({ contacts, setContacts }) {
     function handleSubmit(e) {
@@ -32,7 +32,7 @@ function AddContact({ contacts, setContacts }) {
                 })
         })
         .then(response => response.json())
-        .then(newContact => setContacts(oldContacts => [...oldContacts, <Contact key={newContact.id} contact={newContact} handleDelete={deleteContact()} />]))
+        .then(newContact => setContacts(oldContacts => [...oldContacts, <Contact key={newContact.id} contact={newContact} />]))
     }
 
     return (
