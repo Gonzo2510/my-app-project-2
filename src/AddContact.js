@@ -37,7 +37,7 @@ function AddContact({ contacts, setContacts }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label for ='name'>Name: </label>
+            <label htmlFor ='name'>Name: </label>
             <input 
                 type='text' 
                 id='name' 
@@ -46,7 +46,7 @@ function AddContact({ contacts, setContacts }) {
                 onChange={e => setName(e.target.value)} 
             />
             <br />
-            <label for ='name'>Title: </label>
+            <label htmlFor ='name'>Title: </label>
             <input 
                 type='text' 
                 id='Title' 
@@ -55,7 +55,7 @@ function AddContact({ contacts, setContacts }) {
                 onChange={e => setTitle(e.target.value)} 
             />  
             <br />
-            <label for ='name'>Address: </label>
+            <label htmlFor ='name'>Address: </label>
             <input 
                 type='text' 
                 id='Address' 
@@ -64,7 +64,7 @@ function AddContact({ contacts, setContacts }) {
                 onChange={e => setAddress(e.target.value)} 
             /> 
             <br />
-            <label for ='name'>Phone Number: </label>
+            <label htmlFor ='name'>Phone Number: </label>
             <input 
                 type='text' 
                 id='PhoneNumber' 
