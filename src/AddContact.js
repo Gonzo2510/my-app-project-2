@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Contact from "./Contact";
 
 // function deleteContact(contactToDelete){
@@ -11,13 +11,13 @@ import Contact from "./Contact";
 // }
 
 function AddContact({ contacts, setContacts }) {
+    const [name, setName] = useState("")
+    const [title, setTitle] = useState("")
+    const [address, setAddress] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
+    
     function handleSubmit(e) {
         e.preventDefault()
-        const name = e.target[0].value
-        const title = e.target[1].value
-        const address = e.target[2].value
-        const phoneNumber = e.target[3].value
-        
         fetch('http://localhost:3000/contacts', {
             method: 'POST',
             headers: {
@@ -38,16 +38,40 @@ function AddContact({ contacts, setContacts }) {
     return (
         <form onSubmit={handleSubmit}>
             <label for ='name'>Name: </label>
-            <input type='text' id='name' name='name '></input>
+            <input 
+                type='text' 
+                id='name' 
+                name='name '
+                value ={name}
+                onChange={e => setName(e.target.value)} 
+            />
             <br />
             <label for ='name'>Title: </label>
-            <input type='text' id='Title' name='Title '></input>  
+            <input 
+                type='text' 
+                id='Title' 
+                name='Title '
+                value ={title}
+                onChange={e => setTitle(e.target.value)} 
+            />  
             <br />
             <label for ='name'>Address: </label>
-            <input type='text' id='Address' name='Address'></input>
+            <input 
+                type='text' 
+                id='Address' 
+                name='Address '
+                value ={address}
+                onChange={e => setAddress(e.target.value)} 
+            /> 
             <br />
             <label for ='name'>Phone Number: </label>
-            <input type='text' id='PhoneNumber' name='PhoneNumber '></input> 
+            <input 
+                type='text' 
+                id='PhoneNumber' 
+                name='PhoneNumber '
+                value ={phoneNumber}
+                onChange={e => setPhoneNumber(e.target.value)} 
+            /> 
             <br />
             <button type='submit'>Submit</button>
         </form>
