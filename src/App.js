@@ -15,7 +15,7 @@ function App() {
   // ),[AddContact])
 
   return (
-    <div>
+    <div className="App">
       <NavBar />
       <Routes>
         <Route path="/home" element={<Home />} />
