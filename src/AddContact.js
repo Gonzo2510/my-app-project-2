@@ -33,6 +33,7 @@ function AddContact({ contacts, setContacts }) {
         })
         .then(response => response.json())
         .then(newContact => setContacts(oldContacts => [...oldContacts, <Contact key={newContact.id} contact={newContact} />]))
+        .then(setName(''), setTitle(''), setAddress(''), setPhoneNumber(''))
     }
 
     return (
