@@ -3,11 +3,8 @@ import Contact from "./Contact";
 
 
 
-function ContactList({ contacts, setContacts}) {
-    fetch('http://localhost:3000/contacts')
-    .then(response => response.json())
-    .then(data => setContacts(data.map(item =><Contact key={item.id} contact={item} />)))
-    return (
+function ContactList({ contacts }) {
+return (
         <div className="contacts container">
           {contacts}
         </div>

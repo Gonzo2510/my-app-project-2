@@ -10,9 +10,11 @@ import "./index.css"
 
 function App() {
   let [contacts, setContacts] = useState([])
-  // useEffect(()=> (
-
-  // ),[AddContact])
+    useEffect(()=> (
+      fetch('http://localhost:3000/contacts')
+      .then(response => response.json())
+      .then(data => setContacts(data.map(item =><Contact key={item.id} contact={item} />)))
+    ),[AddContact])
 
   return (
     <div className="App">
