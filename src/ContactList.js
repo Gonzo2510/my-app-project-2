@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import Contact from "./Contact";
+import React from "react";
+
+function ContactList({ displayContacts }) {
 
 
-
-function ContactList({ contacts }) {
 return (
         <div className="contacts container">
-          {contacts}
+          {displayContacts}
         </div>
     )
   }

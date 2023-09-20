@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 import Contact from "./Contact";
 
-// function deleteContact(contactToDelete){
-//     const contactId = contactToDelete.id
-//     console.log(contactId)
-
-//     // fetch('http://localhost:3000/contacts', {method: 'DELETE'})
-//     // .then(response => response.json())
-//     // .then(newContact => setContacts(oldContacts => [...oldContacts, <Contact key={newContact.id} contact={newContact} />]))
-// }
-
 function AddContact({ contacts, setContacts }) {
     const [name, setName] = useState("")
     const [title, setTitle] = useState("")
     const [address, setAddress] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
     
+
     function handleSubmit(e) {
         e.preventDefault()
         fetch('http://localhost:3000/contacts', {
@@ -32,9 +24,10 @@ function AddContact({ contacts, setContacts }) {
                 })
         })
         .then(response => response.json())
-        .then(newContact => setContacts(oldContacts => [...oldContacts, <Contact key={newContact.id} contact={newContact} />]))
+        .then(newContact => setContacts([...contacts, newContact]))
         .then(setName(''), setTitle(''), setAddress(''), setPhoneNumber(''))
     }
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -44,6 +37,7 @@ function AddContact({ contacts, setContacts }) {
                 id='name' 
                 name='name '
                 value ={name}
+                placeholder="John Doe"
                 onChange={e => setName(e.target.value)} 
             />
             <br />
@@ -53,6 +47,7 @@ function AddContact({ contacts, setContacts }) {
                 id='Title' 
                 name='Title '
                 value ={title}
+                placeholder="Programmer"
                 onChange={e => setTitle(e.target.value)} 
             />  
             <br />
@@ -62,6 +57,7 @@ function AddContact({ contacts, setContacts }) {
                 id='Address' 
                 name='Address '
                 value ={address}
+                placeholder="1234 Richmond Ave."
                 onChange={e => setAddress(e.target.value)} 
             /> 
             <br />
@@ -71,6 +67,7 @@ function AddContact({ contacts, setContacts }) {
                 id='PhoneNumber' 
                 name='PhoneNumber '
                 value ={phoneNumber}
+                placeholder="(123) 456-7890"
                 onChange={e => setPhoneNumber(e.target.value)} 
             /> 
             <br />
