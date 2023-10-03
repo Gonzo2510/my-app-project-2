@@ -7,7 +7,7 @@ function ContactList({ contacts, setContacts }) {
     fetch(`http://localhost:3000/contacts/${contact.id}`, {
       method: 'DELETE'
     })
-    .then(setContacts(contacts.filter(itContact => itContact.id !== contact.id )))
+    .then(() => {setContacts(contacts.filter(itContact => itContact.id !== contact.id ))})
   }
 
   const displayContacts = contacts.map(contact => <Contact key={contact.id} contact={contact} handleDelete={deleteContact} />)
