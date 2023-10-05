@@ -8,7 +8,7 @@ import "./index.css"
 
 
 function App() {
-  let [contacts, setContacts] = useState([])
+  const [contacts, setContacts] = useState([])
 
   useEffect(() => {
       fetch('http://localhost:3000/contacts')
