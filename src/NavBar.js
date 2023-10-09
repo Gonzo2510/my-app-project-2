@@ -21,8 +21,6 @@ function NavBar() {
     </form>
     <p>{count}</p>
 
-
-
       <h1>Contacts Book</h1>
         <NavLink exact='/home' to ='/home' >Home</NavLink>
         <NavLink exact='/contactList' to ='/contactList' >Contacts</NavLink>
